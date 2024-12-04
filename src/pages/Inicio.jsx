@@ -39,10 +39,76 @@ export default function Inicio() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const contatoRef = useRef(null)
+
+  const handleScrollToContato = (event) => {
+    event.preventDefault()
+    contatoRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <section>
       <article className={styles.bannerHero}></article>
+
+      <article className={styles.teste}>
+        <div className={styles.extra}>
+          {/* <img
+            src="https://res.cloudinary.com/dio2dnpmn/image/upload/v1730258463/Triade_mb0foi.png"
+            alt=""
+          /> */}
+          <div className={styles.cardzin}>
+            <div className={styles.head}>
+              <p>Me siga</p>
+
+              <div className={styles.sociais}>
+                <a
+                  href="https://www.instagram.com/vetalamusic/"
+                  target="_blank"
+                >
+                  <InstagramLogo size={32} />
+                </a>
+                {/* <a
+                  href="https://www.youtube.com/@dollmaker626?themeRefresh=1"
+                  target="_blank"
+                >
+                  <YoutubeLogo size={32} />
+                </a> */}
+                <a
+                  href="https://soundcloud.com/vvetala?ref=clipboard&p=i&c=1&si=92931BB8590640BAB07AFF14E8FFF45F&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                  target="_blank"
+                >
+                  <SoundcloudLogo size={32} />
+                </a>
+                {/* <a
+                  href="https://open.spotify.com/intl-pt/artist/7dGmK4sImWkq5ClORKQwIL?si=cFlutIm5RQq06ABT4Au6Iw"
+                  target="_blank"
+                >
+                  <SpotifyLogo size={32} />
+                </a> */}
+              </div>
+            </div>
+            <div className={styles.button}>
+              <a
+                href="#contato"
+                onClick={handleScrollToContato}
+              >
+                ENTRAR EM CONTATO
+              </a>
+            </div>
+          </div>
+          {/* <img
+            src="https://res.cloudinary.com/dio2dnpmn/image/upload/v1730258466/code_hfhhq3.png"
+            alt=""
+          /> */}
+        </div>
+        
+      </article>
+
       <article className={styles.content}>
+      <div className={styles.bgFixed}>
+          <div className={styles.circleBlue}></div>
+          <div className={styles.circlePurple}></div>
+        </div>
         <div className={styles.panel}>
           <p>Oficial Website</p>
           <p>©</p>
@@ -91,7 +157,7 @@ export default function Inicio() {
           </div>
         </div>
 
-        <div className={styles.bio}>
+        {/* <div className={styles.bio}>
           <div className={styles.logoOne}>
             <img src="../src/assets/images/logoVetala.png" />
           </div>
@@ -123,9 +189,46 @@ export default function Inicio() {
             </p>
             <p>O futuro a Deus pertence, e já me encontro em plena paz e felicidade.</p>
           </div>
+        </div> */}
+        <div className={styles.bio}>
+          <div className={styles.firstRow}>
+            <div className={styles.img}>
+              <img
+                src="https://res.cloudinary.com/dio2dnpmn/image/upload/v1733324560/_MG_1082_1_mmqovz.png"
+                alt=""
+              />
+            </div>
+
+            <div className={styles.text}>
+              <div className={styles.title}>
+                <img
+                  src="https://res.cloudinary.com/dio2dnpmn/image/upload/v1733325476/Frame_105_fhmpqn.png"
+                  alt=""
+                />
+                <div className={styles.subtitle}>
+                  <p>YURI BAUM</p>
+                  <p>-</p>
+                  <p>BRAZILIAN</p>
+                </div>
+              </div>
+
+              <div className={styles.description}>
+                <p>
+                Há mais de 10 anos, atuo na música como roadie e músico em bandas de metal, punk e pop rock. Minha paixão começou cedo, incentivada pelo apoio dos meus pais, que transformaram o que era um hobby em profissão. Hoje, na produção musical, encontro liberdade para criar, expressar sentimentos e dar forma à minha alma. Meu sonho é levar minha arte ao mundo, compartilhando conhecimento e inspirando outros a tornarem seus sonhos realidade. O futuro é incerto, mas já vivo em paz e felicidade.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* <div className={styles.secondRow}>
+            <img
+              src="https://res.cloudinary.com/dio2dnpmn/image/upload/v1730802432/dollmaker/newUpgrade/s11bjve9r7wd6ftavcx3.png"
+              alt=""
+            />
+          </div> */}
         </div>
 
-        <div className={styles.cta}>
+        {/* <div className={styles.cta}>
           <div className={styles.ctaContent}>
             <div className={styles.colOne}>
               <h2>Vamos Conversar?</h2>
@@ -184,6 +287,79 @@ export default function Inicio() {
                   >
                     <SpotifyLogo size={32} />
                   </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+        <div
+          ref={contatoRef}
+          className={styles.contact}
+          >
+          <div className={styles.rows}>
+            <div className={styles.rowOne}>
+              <img
+                src="https://res.cloudinary.com/dio2dnpmn/image/upload/v1733325476/Frame_117_cu4k8x.png"
+                alt=""
+              />
+            </div>
+            <div className={styles.rowTwo}>
+              <div className={styles.colOne}>
+                <div className={styles.desc}>
+                  <p>
+                    Se você está pronto para levar seu próximo evento a um novo patamar ou
+                    deseja discutir uma parceria que vai marcar a cena do Psy Trance,
+                    entre em contato comigo! Estou ansioso para ouvir suas ideias e
+                    colaborar para criar algo realmente especial.
+                  </p>
+                </div>
+                <div className={styles.img}>
+                  <img
+                    src="https://res.cloudinary.com/dio2dnpmn/image/upload/v1733325476/Vetala_Variac%CC%A7a%CC%83o_completa_-_Branco_secxvx.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div className={styles.colTwo}>
+                <img
+                  className={styles.imgDesktop}
+                  src="https://res.cloudinary.com/dio2dnpmn/image/upload/v1733325476/card_kxvzwf.png"
+                  alt=""
+                />
+                <img
+                  className={styles.imgMobile}
+                  src="https://res.cloudinary.com/dio2dnpmn/image/upload/v1733328265/card-mobile_vg4q6c.png"
+                  alt=""
+                />
+
+                <div className={styles.sociaiss}>
+                  <p>Redes sociais/Plataformas músicais</p>
+                  <div className={styles.icones}>
+                    <a
+                      href="https://www.instagram.com/vetalamusic/"
+                      target="_blank"
+                    >
+                      <InstagramLogo size={32} />
+                    </a>
+                    {/* <a
+                      href="https://www.youtube.com/@dollmaker626"
+                      target="_blank"
+                    >
+                      <YoutubeLogo size={32} />
+                    </a> */}
+                    <a
+                      href="https://soundcloud.com/vvetala?ref=clipboard&p=i&c=1&si=92931BB8590640BAB07AFF14E8FFF45F&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                      target="_blank"
+                    >
+                      <SoundcloudLogo size={32} />
+                    </a>
+                    {/* <a
+                      href="https://open.spotify.com/intl-pt/artist/7dGmK4sImWkq5ClORKQwIL?si=cFlutIm5RQq06ABT4Au6Iw"
+                      target="_blank"
+                    >
+                      <SpotifyLogo size={32} />
+                    </a> */}
+                  </div>
                 </div>
               </div>
             </div>
